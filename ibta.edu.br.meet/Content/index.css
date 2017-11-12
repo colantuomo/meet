@@ -1,0 +1,32 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.logo {
+    font-size: 150px;
+}
+
+.jbtron {
+    background-color: #ff4d4d;
+}
+
+.meet-btn:hover {
+    background-color: #ff4d4d;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.meet-btn {
+    display: block;
+    margin: 0 auto;
+}
+
+.center-div {
+    margin: 0 auto;
+    width: 80% /* value of your choice which suits your alignment */
+}
+
+.testecss {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
