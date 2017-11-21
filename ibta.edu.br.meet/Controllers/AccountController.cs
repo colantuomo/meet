@@ -156,6 +156,10 @@ namespace ibta.edu.br.meet.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    UsuarioModel db = new UsuarioModel();
+                    Usuario newUser = new Usuario();
+                    newUser.IdUsuario = user.Id;
+                    db.Usuario.Add(newUser);
                     
                     // Para obter mais informações sobre como habilitar a confirmação da conta e redefinição de senha, visite https://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar um email com este link

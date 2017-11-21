@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using ibta.edu.br.meet.Models;
 
 namespace ibta.edu.br.meet.Controllers
 {
@@ -11,12 +12,16 @@ namespace ibta.edu.br.meet.Controllers
     public class MainController : Controller
     {
 
-        public ibta.edu.br.meet.Models.UsuariosModels db = new ibta.edu.br.meet.Models.UsuariosModels();
+        //private UsuariosModels db = new UsuariosModels();
+        private UsuarioModel db = new UsuarioModel();
         
         // GET: Main
         public ActionResult TelaPrincipal()
         {
-            return View(db.AspNetUsers.ToList());
+            //ViewBag.usuarios = db.AspNetUsers.ToList();
+            //return View(db.AspNetUsers.Where(id => id.Email == "teste@teste.com").ToList());
+            RedirectToAction("Index", "Home");
+            return View(db.Usuario.ToList());
         }
     }
 }

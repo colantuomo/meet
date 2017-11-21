@@ -204,6 +204,8 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Models\UsuariosModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
