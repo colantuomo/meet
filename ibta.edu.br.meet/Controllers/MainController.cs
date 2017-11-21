@@ -5,17 +5,18 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 
-
 namespace ibta.edu.br.meet.Controllers
 {
     [Authorize]
     public class MainController : Controller
     {
+
+        public ibta.edu.br.meet.Models.UsuariosModels db = new ibta.edu.br.meet.Models.UsuariosModels();
+        
         // GET: Main
         public ActionResult TelaPrincipal()
         {
-            var teste = User.Identity.GetUserId();
-            return View();
+            return View(db.AspNetUsers.ToList());
         }
     }
 }

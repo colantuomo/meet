@@ -1,4 +1,8 @@
 ﻿@Styles.Render("~/Content/TelaPrincipal.css")
+@if (Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
     <!-- Hover Demo-->
     <div class="column">
         <div class="demo-title"></div>
@@ -8,9 +12,19 @@
             <div class="thumbnail">
                 <img src="http://br.web.img3.acsta.net/pictures/15/08/05/20/31/056092.jpg" />
             </div>
+                        
             <!-- Post Content-->
             <div class="post-content">
-                
+                <h1 class="title">@item.UserName</h1>
+                <h2 class="sub_title">@item.Email</h2>
+                <p class="description">vai pra puta que pariu aleatoriamente varias coisas escritas e foda-se</p>
+                <div class="post-meta row">
+                    <span class="comments btn btn-success"><a class="glyphicon glyphicon-thumbs-up" href="#"> </a></span>
+                    <span class="comments btn btn-danger"><a class="glyphicon glyphicon-thumbs-down" href="#"> </a></span>
+                </div>
+            </div>
+
+            <!--
                 <h1 class="title">Janis Joplin</h1>
                 <h2 class="sub_title">E ai? Beleza?</h2>
                 <p class="description">vai pra puta que pariu aleatoriamente varias coisas escritas e foda-se</p>
@@ -18,7 +32,8 @@
                     <span class="comments btn btn-success"><a class="glyphicon glyphicon-thumbs-up" href="#"> </a></span>
                     <span class="comments btn btn-danger"><a class="glyphicon glyphicon-thumbs-down" href="#"> </a></span>
                 </div>
+            -->
             </div>
-        </div>
     </div>
-
+    }
+}
