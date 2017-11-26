@@ -19,8 +19,19 @@ namespace ibta.edu.br.meet.Controllers
         public ActionResult TelaPrincipal()
         {
             //ViewBag.usuarios = db.AspNetUsers.ToList();
-            return View(db.AspNetUsers.Where(id => id.Email == "teste@teste.com").ToList());
-            //return View();
+            //return View(db.AspNetUsers.Where(id => id.Email == "teste@teste.com").ToList());
+            RedirectToAction("Index", "Home");
+            return View(db.AspNetUsers.ToList());
+        }
+
+        public void atualizarMatchPositivo()
+        {
+            RedirectToAction("Index", "Home");
+        }
+
+        public void atualizarMatchNegativo()
+        {
+            RedirectToAction("Index", "Home");
         }
     }
 }
