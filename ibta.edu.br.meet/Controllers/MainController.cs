@@ -18,12 +18,11 @@ namespace ibta.edu.br.meet.Controllers
         {
             //ViewBag.usuarios = db.AspNetUsers.ToList();
             //return View(db.AspNetUsers.Where(id => id.Email == "teste@teste.com").ToList());
-            RedirectToAction("Index", "Home");
             return View(db.Usuario.ToList());
         }
 
         [HttpPost]
-        public ActionResult TelaPrincipal(String id, int status)
+        public ActionResult TelaPrincipal(string id, int status)
         {
             return View(db.Usuario.ToList());
         }
