@@ -4,7 +4,6 @@ namespace ibta.edu.br.meet.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using System.Collections.Generic;
 
     public partial class UsuarioModel : DbContext
     {
@@ -17,13 +16,6 @@ namespace ibta.edu.br.meet.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
         }
-
-        public List<Usuario> getAllUsers(){
-            return Usuario.ToList();
-        }
-
-
     }
 }

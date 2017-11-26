@@ -10,17 +10,18 @@ namespace ibta.edu.br.meet.Models
     public partial class Usuario
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [StringLength(255)]
         public string IdUsuario { get; set; }
 
-        [StringLength(255)]
-        public string Login { get; set; }
-
-        [StringLength(255)]
-        public string Senha { get; set; }
-
+        [Required]
         [StringLength(255)]
         public string Nome { get; set; }
+
+        [StringLength(255)]
+        public string Nickname { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime DataNascimento { get; set; }
+
+        public byte Sexo { get; set; }
     }
 }
