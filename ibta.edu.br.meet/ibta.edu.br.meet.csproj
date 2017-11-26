@@ -195,7 +195,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PreferenciasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,10 +229,11 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\calcinha.png" />
-    <Content Include="Content\calcinheca.png" />
-    <Content Include="Content\cueca.png" />
+    <Content Include="Content\img\calcinha.png" />
+    <Content Include="Content\img\calcinheca.png" />
+    <Content Include="Content\img\cueca.png" />
     <Content Include="Content\index.css" />
+    <Content Include="Content\preferencias.css" />
     <Content Include="Content\TelaPrincipal.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -307,10 +307,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Main\TelaPrincipal.cshtml" />
+    <Content Include="Views\Account\Preferencias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Preferencias\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

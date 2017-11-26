@@ -427,6 +427,11 @@ namespace ibta.edu.br.meet.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult Preferencias()
+        {
+            return View();
+        }
+
         #region Auxiliares
         // Usado para proteção XSRF ao adicionar logons externos
         private const string XsrfKey = "XsrfId";
