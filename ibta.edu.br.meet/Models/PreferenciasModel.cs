@@ -5,9 +5,9 @@ namespace ibta.edu.br.meet.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class Model1 : DbContext
+    public partial class PreferenciasModel : DbContext
     {
-        public Model1()
+        public PreferenciasModel()
             : base("name=PreferenciasModel")
         {
         }
