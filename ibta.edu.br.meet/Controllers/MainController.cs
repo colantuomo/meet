@@ -22,7 +22,8 @@ namespace ibta.edu.br.meet.Controllers
             return View(db.Usuario.ToList());
         }
 
-        public ActionResult TelaPrincipal(string id, int status)
+        [HttpPost]
+        public ActionResult TelaPrincipal(String id, int status)
         {
             return View(db.Usuario.ToList());
         }
