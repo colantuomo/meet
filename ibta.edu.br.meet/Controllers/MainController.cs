@@ -11,20 +11,32 @@ namespace ibta.edu.br.meet.Controllers
     [Authorize]
     public class MainController : Controller
     {
-        private UsuarioModel db = new UsuarioModel();
-        
+        private UsuarioModel dbUsuario = new UsuarioModel();
+        private MatchModel dbMatch = new MatchModel();
+        private Match newMatch = new Match();
+        private Guid g;
+
         // GET: Main
         public ActionResult TelaPrincipal()
         {
             //ViewBag.usuarios = db.AspNetUsers.ToList();
             //return View(db.AspNetUsers.Where(id => id.Email == "teste@teste.com").ToList());
-            return View(db.Usuario.ToList());
+            return View(dbUsuario.Usuario.ToList());
         }
 
-        [HttpPost]
-        public ActionResult TelaPrincipal(string id, int status)
+        public void matchAdd(string id, bool status)
         {
-            return View(db.Usuario.ToList());
+            //§
+            g = Guid.NewGuid();
+            newMatch.IdMatch = g.ToString();
+            newMatch.IdUsuario = User.Identity.GetUserId();
+            newMatch.IdUsuarioCurtido = id;
+            newMatch.Status = status;
+
+            dbMatch.Match.Add(newMatch);
+            dbMatch.SaveChanges();
+
+            RedirectToAction("TelaPrincipal");
         }
     }
 }

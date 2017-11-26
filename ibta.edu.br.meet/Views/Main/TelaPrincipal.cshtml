@@ -15,12 +15,26 @@
                         
             <!-- Post Content-->
             <div class="post-content">
-                <h1 class="title">@item.Nome</h1>
-                <h2 class="sub_title">@item.Login</h2>
+                <h1 class="title">@item.Nickname</h1>
+                <h2 class="sub_title">@item.Nome</h2>
                 <p class="description">descrição qualquer uma</p>
                 <div class="post-meta row">
-                    <span class="comments btn btn-success"><a class="glyphicon glyphicon-thumbs-up" href="/Main/TelaPrincipal" id="@item.Id"></a></span>
-                    <span class="comments btn btn-danger"><a class="glyphicon glyphicon-thumbs-down" href="/Main/TelaPrincipal" id="@item.Id"> </a></span>
+                    <a href="
+                        @Url.Action(
+                        actionName: "matchAdd",
+                        controllerName: "Main",
+                        routeValues: new { id = item.IdUsuario, status = true})">
+
+                        <span class="comments btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span></span>
+                    </a>
+                    <a href="
+                        @Url.Action(
+                        actionName: "matchAdd", 
+                        controllerName: "Main", 
+                        routeValues: new { id = item.IdUsuario, status = false})">
+
+                        <span class="comments btn btn-danger"><span class="glyphicon glyphicon-thumbs-down"></span></span>
+                    </a>
                 </div>
             </div>
         </div>
