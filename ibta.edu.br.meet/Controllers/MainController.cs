@@ -26,5 +26,11 @@ namespace ibta.edu.br.meet.Controllers
         {
             return View(db.Usuario.ToList());
         }
+
+        public ActionResult newUsersChoice(string type, int idade)
+        {
+            //db.Usuario.Add();
+            return TelaPrincipal();
+        }
     }
 }
