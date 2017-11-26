@@ -12,8 +12,8 @@ namespace ibta.edu.br.meet.Controllers
     public class MainController : Controller
     {
 
-        //private UsuariosModels db = new UsuariosModels();
-        private UsuarioModel db = new UsuarioModel();
+        private UsuariosModels db = new UsuariosModels();
+        //private UsuarioModel db = new UsuarioModel();
         
         // GET: Main
         public ActionResult TelaPrincipal()
@@ -21,7 +21,17 @@ namespace ibta.edu.br.meet.Controllers
             //ViewBag.usuarios = db.AspNetUsers.ToList();
             //return View(db.AspNetUsers.Where(id => id.Email == "teste@teste.com").ToList());
             RedirectToAction("Index", "Home");
-            return View(db.Usuario.ToList());
+            return View(db.AspNetUsers.ToList());
+        }
+
+        public void atualizarMatchPositivo()
+        {
+            RedirectToAction("Index", "Home");
+        }
+
+        public void atualizarMatchNegativo()
+        {
+            RedirectToAction("Index", "Home");
         }
     }
 }
