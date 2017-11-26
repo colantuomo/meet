@@ -274,7 +274,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Main\TelaPrincipal.cshtml" />
-    <Content Include="Views\Account\Preferencias.cshtml" />
+    <Content Include="Views\Account\SelectGender.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

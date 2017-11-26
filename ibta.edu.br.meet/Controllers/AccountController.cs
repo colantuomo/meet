@@ -167,7 +167,7 @@ namespace ibta.edu.br.meet.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmar sua conta", "Confirme sua conta clicando <a href=\"" + callbackUrl + "\">aqui</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("SelectGender", "Account");
                 }
                 AddErrors(result);
             }
@@ -427,7 +427,7 @@ namespace ibta.edu.br.meet.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult Preferencias()
+        public ActionResult selectGender()
         {
             return View();
         }
