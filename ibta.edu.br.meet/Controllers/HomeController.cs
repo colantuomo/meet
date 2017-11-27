@@ -12,8 +12,13 @@ namespace ibta.edu.br.meet.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-
+                return RedirectToRoute(new
+                {
+                    controller = "Main",
+                    action = "TelaPrincipal"
+                });
             }
+
             return View();
         }
 

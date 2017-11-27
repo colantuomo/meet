@@ -11,20 +11,23 @@ namespace ibta.edu.br.meet.Controllers
     [Authorize]
     public class MainController : Controller
     {
+        private vw_TelaPrincipalModel dbTelaPrincipal = new vw_TelaPrincipalModel();
         private UsuarioModel dbUsuario = new UsuarioModel();
         private MatchModel dbMatch = new MatchModel();
         private Match newMatch = new Match();
         private Guid g;
-
+        private string IdUsuario;
+        
         // GET: Main
         public ActionResult TelaPrincipal()
         {
             //ViewBag.usuarios = db.AspNetUsers.ToList();
-            //return View(db.AspNetUsers.Where(id => id.Email == "teste@teste.com").ToList());
-            return View(dbUsuario.Usuario.ToList());
+            //return View(dbUsuario.Usuario.ToList());
+            IdUsuario = User.Identity.GetUserId();
+            return View(dbTelaPrincipal.vw_TelaPrincipal.Where(id => id.IdUsuarioLogado == IdUsuario).ToList());
         }
 
-        public void matchAdd(string id, bool status)
+        public ActionResult matchAdd(string id, bool status)
         {
             //§
             g = Guid.NewGuid();
@@ -36,7 +39,7 @@ namespace ibta.edu.br.meet.Controllers
             dbMatch.Match.Add(newMatch);
             dbMatch.SaveChanges();
 
-            RedirectToAction("TelaPrincipal");
+            return RedirectToAction("TelaPrincipal", "Main");
         }
 
         public ActionResult newUsersChoice(string type, int idade)
