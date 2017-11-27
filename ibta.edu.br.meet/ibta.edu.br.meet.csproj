@@ -205,6 +205,7 @@
     <Compile Include="Models\MatchModel.cs" />
     <Compile Include="Models\PreferenciasModel.cs" />
     <Compile Include="Models\Preferencias.cs" />
+    <Compile Include="Models\UserPreferences.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Models\vw_TelaPrincipal.cs" />
