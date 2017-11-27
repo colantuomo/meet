@@ -38,11 +38,5 @@ namespace ibta.edu.br.meet.Controllers
 
             RedirectToAction("TelaPrincipal");
         }
-
-        public ActionResult newUsersChoice(string type, int idade)
-        {
-            //db.Usuario.Add();
-            return TelaPrincipal();
-        }
     }
 }
