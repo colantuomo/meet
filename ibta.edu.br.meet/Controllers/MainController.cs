@@ -12,6 +12,7 @@ namespace ibta.edu.br.meet.Controllers
     public class MainController : Controller
     {
         private vw_TelaPrincipalModel dbTelaPrincipal = new vw_TelaPrincipalModel();
+        private vw_MatchesModel dbMatches = new vw_MatchesModel();
         private UsuarioModel dbUsuario = new UsuarioModel();
                 
         // GET: Main
@@ -41,6 +42,12 @@ namespace ibta.edu.br.meet.Controllers
             dbMatch.SaveChanges();
 
             return RedirectToAction("TelaPrincipal", "Main");
+        }
+
+        public ActionResult Matches()
+        {
+            IdUsuario = User.Identity.GetUserId();
+            return View(dbMatches.vw_Matches_Reciprocos.Where(id => id.IdUsuario == IdUsuario).ToList());
         }
     }
 }
