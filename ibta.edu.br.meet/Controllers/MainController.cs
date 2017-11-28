@@ -13,11 +13,7 @@ namespace ibta.edu.br.meet.Controllers
     {
         private vw_TelaPrincipalModel dbTelaPrincipal = new vw_TelaPrincipalModel();
         private UsuarioModel dbUsuario = new UsuarioModel();
-        private MatchModel dbMatch = new MatchModel();
-        private Match newMatch = new Match();
-        private Guid g;
-        private string IdUsuario;
-        
+                
         // GET: Main
         public ActionResult TelaPrincipal()
         {
@@ -26,6 +22,12 @@ namespace ibta.edu.br.meet.Controllers
             IdUsuario = User.Identity.GetUserId();
             return View(dbTelaPrincipal.vw_TelaPrincipal.Where(id => id.IdUsuarioLogado == IdUsuario).ToList());
         }
+
+
+        private MatchModel dbMatch = new MatchModel();
+        private Match newMatch = new Match();
+        private Guid g;
+        private string IdUsuario;
 
         public ActionResult matchAdd(string id, bool status)
         {

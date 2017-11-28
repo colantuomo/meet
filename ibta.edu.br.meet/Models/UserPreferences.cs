@@ -9,7 +9,7 @@ namespace ibta.edu.br.meet.Models
     {
         public DateTime dataNasc { get; set; }
         public string nome { get; set; }
-        public string sexo { get; set; }
-        public string sexoAlvo { get; set; }
+        public byte sexo { get; set; }
+        public byte sexoAlvo { get; set; }
     }
 }

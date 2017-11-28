@@ -427,14 +427,43 @@ namespace ibta.edu.br.meet.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult selectGender()
+        public ActionResult SelectGender(string nome, string sexo)
         {
             return View();
         }
+        
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        usuario.Nome = user.nome;
+        //        usuario.Sexo = user.sexo;
+        //        dbUsuario.Usuario.Add(usuario);
 
+        //        return RedirectToRoute(new
+        //        {
+        //            controller = "Main",
+        //            action = "TelaPrincipal"
+        //        });
+        //    }
+        //    return View(user);
+        //}
+
+        private UsuarioModel dbUsuario = new UsuarioModel();
+        private Usuario usuario = new Usuario();
         public void newUsersChoice(string type, UserPreferences model)
         {
+            if (ModelState.IsValid)
+            {
+                usuario.Nome = model.nome;
+                usuario.Sexo = model.sexo;
+                dbUsuario.Usuario.Add(usuario);
 
+                RedirectToRoute(new
+                {
+                    controller = "Main",
+                    action = "TelaPrincipal"
+                });
+            }
         }
 
         #region Auxiliares
