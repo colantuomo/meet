@@ -31,7 +31,6 @@ namespace ibta.edu.br.meet.Controllers
 
         public ActionResult matchAdd(string id, bool status)
         {
-            //§
             g = Guid.NewGuid();
             newMatch.IdMatch = g.ToString();
             newMatch.IdUsuario = User.Identity.GetUserId();

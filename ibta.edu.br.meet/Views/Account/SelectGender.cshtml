@@ -5,19 +5,21 @@
 @Styles.Render("~/Content/preferencias.css")
 @Styles.Render("~/Content/bootstrap.css")
 <div class="container">
-    <div class="inputs row">
+    
+@using (Html.BeginForm())
+{      <div class="inputs row">
         <div class="col-lg-4">
-            <input class="form-control" type="date" />
+           @Html.TextBoxFor(model => model.dataNasc, new { @type = "date", @class="form-control" })
         </div>
         <div class="col-lg-4">
             @Html.TextBoxFor(m => m.nome, new { @class = "form-control" })
         </div>
         <div class="col-lg-4">
             <div class="radio-inline">
-                @Html.RadioButtonFor(m => m.sexo, "Masculino") Masculino
+                @Html.RadioButtonFor(m => m.sexo, 1) Masculino
             </div>
             <div class="radio-inline">
-                @Html.RadioButtonFor(m => m.sexo, "Feminino") Feminino
+                @Html.RadioButtonFor(m => m.sexo, 2) Feminino
             </div>
         </div>
     </div>
@@ -26,21 +28,17 @@
     </div>
     <div class="row">
         <div class="col-lg-4">
-            <a href="@Url.Action("newUsersChoice", "Account", new { type = "cueca", model = this.Model })">
-                <img class="item" src="~/Content/img/cueca.png" />
-            </a>
+            @Html.RadioButtonFor(m => m.sexoAlvo, 1, new { @type="image", @src="/Content/img/cueca.png", @class="item"})
         </div>
         <div class="col-lg-4">
-            <a href="@Url.Action("newUsersChoice", "Account", new { type="calcinheca"})">
-                <img class="item" src="~/Content/img/calcinheca.png" />
-            </a>
+            @Html.RadioButtonFor(m => m.sexoAlvo, 2, new { @type = "image", @src = "/Content/img/calcinheca.png", @class = "item" })
         </div>
         <div class="col-lg-4">
-            <a href="@Url.Action("newUsersChoice", "Account", new { type="calcinha"})">
-                <img class="item" src="~/Content/img/calcinha.png" />
-            </a>
+            @Html.RadioButtonFor(m => m.sexoAlvo, 3, new { @type = "image", @src = "/Content/img/calcinha.png", @class = "item" })
         </div>
     </div>
+    
+}
 </div>
 
 

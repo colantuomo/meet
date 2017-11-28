@@ -426,44 +426,45 @@ namespace ibta.edu.br.meet.Controllers
 
             base.Dispose(disposing);
         }
-
-        public ActionResult SelectGender(string nome, string sexo)
+        
+        public ActionResult SelectGender()
         {
             return View();
         }
-        
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        usuario.Nome = user.nome;
-        //        usuario.Sexo = user.sexo;
-        //        dbUsuario.Usuario.Add(usuario);
-
-        //        return RedirectToRoute(new
-        //        {
-        //            controller = "Main",
-        //            action = "TelaPrincipal"
-        //        });
-        //    }
-        //    return View(user);
-        //}
 
         private UsuarioModel dbUsuario = new UsuarioModel();
         private Usuario usuario = new Usuario();
-        public void newUsersChoice(string type, UserPreferences model)
+        private UsuarioPreferenciasModel dbUsuarioPreferencias = new UsuarioPreferenciasModel();
+        private Usuario_Preferencias usuarioPreferencias = new Usuario_Preferencias();
+
+        [HttpPost]
+        public ActionResult SelectGender(UserPreferences model)
         {
             if (ModelState.IsValid)
             {
+                usuario.IdUsuario = User.Identity.GetUserId();
                 usuario.Nome = model.nome;
                 usuario.Sexo = model.sexo;
+                usuario.DataNascimento = model.dataNasc;
                 dbUsuario.Usuario.Add(usuario);
+                dbUsuario.SaveChanges();
 
-                RedirectToRoute(new
+                usuarioPreferencias.IdUsuario = User.Identity.GetUserId();
+                usuarioPreferencias.Sexo = model.sexoAlvo;
+                dbUsuarioPreferencias.Usuario_Preferencias.Add(usuarioPreferencias);
+                dbUsuarioPreferencias.SaveChanges();
+
+                return RedirectToRoute(new
                 {
                     controller = "Main",
                     action = "TelaPrincipal"
                 });
             }
+            return View(model);
+        }
+
+        public void newUsersChoice(string type, UserPreferences model)
+        {
         }
 
         #region Auxiliares

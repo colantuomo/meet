@@ -208,6 +208,8 @@
     <Compile Include="Models\UserPreferences.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
+    <Compile Include="Models\UsuarioPreferenciasModel.cs" />
+    <Compile Include="Models\Usuario_Preferencias.cs" />
     <Compile Include="Models\vw_TelaPrincipal.cs" />
     <Compile Include="Models\vw_TelaPrincipalModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
