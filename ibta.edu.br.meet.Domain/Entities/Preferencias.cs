@@ -1,4 +1,4 @@
-namespace ibta.edu.br.meet.Models
+namespace ibta.edu.br.meet.Domain
 {
     using System;
     using System.Collections.Generic;

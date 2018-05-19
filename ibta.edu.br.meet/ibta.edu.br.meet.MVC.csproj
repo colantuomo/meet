@@ -204,7 +204,6 @@
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchModel.cs" />
     <Compile Include="Models\PreferenciasModel.cs" />
-    <Compile Include="Models\Preferencias.cs" />
     <Compile Include="Models\UserPreferences.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
