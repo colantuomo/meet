@@ -16,5 +16,6 @@ namespace ibta.edu.br.meet.Data
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Preferencia> Preferencias { get; set; }
     }
 }
