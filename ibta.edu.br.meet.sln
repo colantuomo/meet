@@ -3,11 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ibta.edu.br.meet", "ibta.edu.br.meet\ibta.edu.br.meet.csproj", "{570620CB-5710-44BF-86C5-2CA72D142429}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ibta.edu.br.meet.MVC", "ibta.edu.br.meet\ibta.edu.br.meet.MVC.csproj", "{570620CB-5710-44BF-86C5-2CA72D142429}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ibta.edu.br.meet.Data", "ibta.edu.br.meet.Data\ibta.edu.br.meet.Data.csproj", "{5C953176-3CAD-4E70-9BAE-7CE2EA261A09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ibta.edu.br.meet.Domain", "ibta.edu.br.meet.Domain\ibta.edu.br.meet.Domain.csproj", "{94E248FF-7322-43C3-B3AB-8209F0820EB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{69277A9B-1E6F-476A-B62B-796BA85EF134}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{1EFD8168-E4C1-4C6C-828B-68D59F389013}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{733754B0-DE8A-4B03-8E46-0F5286F7EFCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{4DFCA8B6-086C-4B6F-A9F9-068939857311}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{592A71D4-190C-4D75-BBE0-64B19FB939AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0 - CrossCuting", "4.0 - CrossCuting", "{46AD68FA-F54C-48CF-87D3-34C3FABFF84D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{A6C9F1AF-1CE1-4016-8216-4C66108E8EA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +44,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{570620CB-5710-44BF-86C5-2CA72D142429} = {69277A9B-1E6F-476A-B62B-796BA85EF134}
+		{5C953176-3CAD-4E70-9BAE-7CE2EA261A09} = {A6C9F1AF-1CE1-4016-8216-4C66108E8EA3}
+		{94E248FF-7322-43C3-B3AB-8209F0820EB5} = {733754B0-DE8A-4B03-8E46-0F5286F7EFCA}
+		{46AD68FA-F54C-48CF-87D3-34C3FABFF84D} = {4DFCA8B6-086C-4B6F-A9F9-068939857311}
+		{A6C9F1AF-1CE1-4016-8216-4C66108E8EA3} = {4DFCA8B6-086C-4B6F-A9F9-068939857311}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6B54C93-07BD-4460-917C-72C0DC757ED2}

@@ -8,9 +8,13 @@ using ibta.edu.br.meet.Domain;
 
 namespace ibta.edu.br.meet.Data
 {
-    public class Context: DbContext
+    public class Context : DbContext
     {
-    }
+        public Context() : base("ibta.edu.br.DataBase")
+        {
 
-    public DbSet<Usuario> Usuarios { get; set; }
+        }
+
+        public DbSet<Usuario> Usuarios { get; set; }
+    }
 }
