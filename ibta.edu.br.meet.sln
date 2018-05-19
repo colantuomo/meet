@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ibta.edu.br.meet", "ibta.edu.br.meet\ibta.edu.br.meet.csproj", "{570620CB-5710-44BF-86C5-2CA72D142429}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ibta.edu.br.meet.Data", "ibta.edu.br.meet.Data\ibta.edu.br.meet.Data.csproj", "{5C953176-3CAD-4E70-9BAE-7CE2EA261A09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ibta.edu.br.meet.Domain", "ibta.edu.br.meet.Domain\ibta.edu.br.meet.Domain.csproj", "{94E248FF-7322-43C3-B3AB-8209F0820EB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{570620CB-5710-44BF-86C5-2CA72D142429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{570620CB-5710-44BF-86C5-2CA72D142429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{570620CB-5710-44BF-86C5-2CA72D142429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C953176-3CAD-4E70-9BAE-7CE2EA261A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C953176-3CAD-4E70-9BAE-7CE2EA261A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C953176-3CAD-4E70-9BAE-7CE2EA261A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C953176-3CAD-4E70-9BAE-7CE2EA261A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E248FF-7322-43C3-B3AB-8209F0820EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E248FF-7322-43C3-B3AB-8209F0820EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E248FF-7322-43C3-B3AB-8209F0820EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E248FF-7322-43C3-B3AB-8209F0820EB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

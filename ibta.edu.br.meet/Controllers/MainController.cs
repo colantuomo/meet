@@ -47,6 +47,7 @@ namespace ibta.edu.br.meet.Controllers
         public ActionResult Matches()
         {
             IdUsuario = User.Identity.GetUserId();
+            return View()
             return View(dbMatches.vw_Matches_Reciprocos.Where(id => id.IdUsuario == IdUsuario).ToList());
         }
     }
