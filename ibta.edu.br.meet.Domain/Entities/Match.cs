@@ -1,4 +1,4 @@
-namespace ibta.edu.br.meet.Models
+namespace ibta.edu.br.meet.Domain
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@ namespace ibta.edu.br.meet.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Match")]
+    [Table("Matches")]
     public partial class Match
     {
         [Key]

@@ -1,4 +1,4 @@
-namespace ibta.edu.br.meet.Models
+namespace ibta.edu.br.meet.Domain
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,8 @@ namespace ibta.edu.br.meet.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Usuario_Preferencias
+    [Table("Usuario_Preferencias")]
+    public partial class Usuario_Preferencia
     {
         [Key]
         [Column(Order = 0)]

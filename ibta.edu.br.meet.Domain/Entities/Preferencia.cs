@@ -6,6 +6,7 @@ namespace ibta.edu.br.meet.Domain
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("Preferencias")]
     public partial class Preferencia
     {
         [Key]

@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using ibta.edu.br.meet.Models;
+using ibta.edu.br.meet.Data;
+using ibta.edu.br.meet.Domain;
 
 namespace ibta.edu.br.meet.Controllers
 {
@@ -13,8 +15,8 @@ namespace ibta.edu.br.meet.Controllers
     {
         private vw_TelaPrincipalModel dbTelaPrincipal = new vw_TelaPrincipalModel();
         private vw_MatchesModel dbMatches = new vw_MatchesModel();
-        private UsuarioModel dbUsuario = new UsuarioModel();
-                
+        private Context db = new Context();
+
         // GET: Main
         public ActionResult TelaPrincipal()
         {
@@ -24,8 +26,6 @@ namespace ibta.edu.br.meet.Controllers
             return View(dbTelaPrincipal.vw_TelaPrincipal.Where(id => id.IdUsuarioLogado == IdUsuario).ToList());
         }
 
-
-        private MatchModel dbMatch = new MatchModel();
         private Match newMatch = new Match();
         private Guid g;
         private string IdUsuario;
@@ -38,16 +38,29 @@ namespace ibta.edu.br.meet.Controllers
             newMatch.IdUsuarioCurtido = id;
             newMatch.Status = status;
 
-            dbMatch.Match.Add(newMatch);
-            dbMatch.SaveChanges();
+            db.Matchs.Add(newMatch);
+            db.SaveChanges();
 
             return RedirectToAction("TelaPrincipal", "Main");
         }
 
         public ActionResult Matches()
         {
+            var resultado = db.Matchs
+                .Join(db.Usuarios, matches => matches.IdUsuario, usuario => usuario.IdUsuario, (matches, usuario) => new { matches, usuario })
+                .Join(db.Usuarios, matches2 => matches2.matches.IdUsuarioCurtido, usuario2 => usuario2.IdUsuario, (matches, usuario2) => new { matches, usuario2 })
+                .Select(x => new
+                {
+                    IdUsuario = x.matches.usuario.IdUsuario,
+                    IdUsuarioCurtido = x.usuario2.IdUsuario,
+                    NomeUsuario = x.matches.usuario.IdUsuario,
+                    NomeUsuarioCurtido = x.usuario2.Nome
+                }
+                ).ToList();
+
+            return View(resultado);
             //IdUsuario = User.Identity.GetUserId();
-            return View(dbMatches.vw_Matches_Reciprocos.Where(id => id.IdUsuario == IdUsuario).ToList());
+            //return View(dbMatches.vw_Matches_Reciprocos.Where(id => id.IdUsuario == IdUsuario).ToList());
         }
     }
 }

@@ -15,7 +15,13 @@ namespace ibta.edu.br.meet.Data
 
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Preferencia> Preferencias { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<Preferencia> Preferencias { get; set; }
+        public virtual DbSet<Match> Matchs { get; set; }
+        public virtual DbSet<Usuario_Preferencia> Usuario_Preferencias { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+        }
     }
 }

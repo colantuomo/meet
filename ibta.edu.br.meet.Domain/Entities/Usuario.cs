@@ -6,7 +6,7 @@ namespace ibta.edu.br.meet.Domain
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Usuario")]
+    [Table("Usuarios")]
     public partial class Usuario
     {
         [Key]

@@ -14,11 +14,6 @@ namespace ibta.edu.br.meet.Models
 
         [Key]
         [Column(Order = 1)]
-        [StringLength(255)]
-        public string Nome { get; set; }
-
-        [Key]
-        [Column(Order = 2)]
         public bool Status { get; set; }
     }
 }

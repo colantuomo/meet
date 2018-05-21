@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Match.cs" />
     <Compile Include="Entities\Preferencia.cs" />
+    <Compile Include="Entities\Usuario_Preferencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Usuario.cs" />
   </ItemGroup>

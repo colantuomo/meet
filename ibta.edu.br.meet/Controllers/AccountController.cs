@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ibta.edu.br.meet.Models;
+using ibta.edu.br.meet.Data;
+using ibta.edu.br.meet.Domain;
 
 namespace ibta.edu.br.meet.Controllers
 {
@@ -156,10 +158,10 @@ namespace ibta.edu.br.meet.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    UsuarioModel db = new UsuarioModel();
+                    Context db = new Context();
                     Usuario newUser = new Usuario();
                     newUser.IdUsuario = user.Id;
-                    db.Usuario.Add(newUser);
+                    db.Usuarios.Add(newUser);
                     
                     // Para obter mais informações sobre como habilitar a confirmação da conta e redefinição de senha, visite https://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar um email com este link
@@ -432,10 +434,9 @@ namespace ibta.edu.br.meet.Controllers
             return View();
         }
 
-        private UsuarioModel dbUsuario = new UsuarioModel();
+        private Context db = new Context();
         private Usuario usuario = new Usuario();
-        private UsuarioPreferenciasModel dbUsuarioPreferencias = new UsuarioPreferenciasModel();
-        private Usuario_Preferencias usuarioPreferencias = new Usuario_Preferencias();
+        private Usuario_Preferencia usuarioPreferencias = new Usuario_Preferencia();
 
         [HttpPost]
         public ActionResult SelectGender(UserPreferences model)
@@ -446,13 +447,13 @@ namespace ibta.edu.br.meet.Controllers
                 usuario.Nome = model.nome;
                 usuario.Sexo = model.sexo;
                 usuario.DataNascimento = model.dataNasc;
-                dbUsuario.Usuario.Add(usuario);
-                dbUsuario.SaveChanges();
+                db.Usuarios.Add(usuario);
+                db.SaveChanges();
 
                 usuarioPreferencias.IdUsuario = User.Identity.GetUserId();
                 usuarioPreferencias.Sexo = model.sexoAlvo;
-                dbUsuarioPreferencias.Usuario_Preferencias.Add(usuarioPreferencias);
-                dbUsuarioPreferencias.SaveChanges();
+                db.Usuario_Preferencias.Add(usuarioPreferencias);
+                db.SaveChanges();
 
                 return RedirectToRoute(new
                 {
