@@ -1,10 +1,10 @@
 ﻿@using ibta.edu.br.meet.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Efetuar login";
+    ViewBag.Title = "MEET";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <p>
-                    @Html.ActionLink("Registrar-se como novo usuário", "Register")
+                    @Html.ActionLink("Registrar-se", "Register")
                 </p>
                 @* Ativar isso assim que você tiver a confirmação de conta ativada para a funcionalidade de redefinição de senha
                     <p>
@@ -51,11 +51,7 @@
             }
         </section>
     </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
+    
 </div>
 
 @section Scripts {

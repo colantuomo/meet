@@ -20,10 +20,11 @@ namespace ibta.edu.br.meet.Controllers
         // GET: Main
         public ActionResult TelaPrincipal()
         {
-            //ViewBag.usuarios = db.AspNetUsers.ToList();
-            //return View(dbUsuario.Usuario.ToList());
             IdUsuario = User.Identity.GetUserId();
-            return View(dbTelaPrincipal.vw_TelaPrincipal.Where(id => id.IdUsuarioLogado == IdUsuario).ToList());
+            var res = db.Usuarios.SqlQuery("SELECT Usuarios.Nome, Usuarios.DataNascimento FROM Usuarios " +
+                "INNER JOIN Usuario_Preferencias ON Usuarios.idUsuario = Usuario_Preferencias.idUsuario " +
+                "WHERE Usuarios.idUsuario = "+IdUsuario).ToList();
+            return View(res);
         }
 
         private Match newMatch = new Match();

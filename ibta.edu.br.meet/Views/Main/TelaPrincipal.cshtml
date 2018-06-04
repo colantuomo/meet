@@ -1,6 +1,6 @@
 ﻿@Styles.Render("~/Content/TelaPrincipal.css")
 </br>
-@Html.ActionLink("Matches", "Matches", "Main", new { @class = "btn btn-block btn-success", @type = "button" })
+@Html.ActionLink("Matches", "Matches", "Main", new { @class = "btn  btn-block btn-success text-center", @type = "button" })
 @if (Model.Count > 0)
 {
     foreach (var item in Model)
@@ -18,7 +18,7 @@
             <!-- Post Content-->
             <div class="post-content">
                 <h1 class="title">@item.Nome</h1>
-                <h2 class="sub_title">@item.Idade</h2>
+                <h2 class="sub_title">@item.DataNascimento</h2>
                 <p class="description">descrição qualquer uma</p>
                 <div class="post-meta row">
                     <a href="
