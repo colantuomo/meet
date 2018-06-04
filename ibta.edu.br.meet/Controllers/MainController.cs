@@ -22,8 +22,7 @@ namespace ibta.edu.br.meet.Controllers
         {
             IdUsuario = User.Identity.GetUserId();
             var res = db.Usuarios.SqlQuery("SELECT Usuarios.Nome, Usuarios.DataNascimento FROM Usuarios " +
-                "INNER JOIN Usuario_Preferencias ON Usuarios.idUsuario = Usuario_Preferencias.idUsuario " +
-                "WHERE Usuarios.idUsuario = "+IdUsuario).ToList();
+                "WHERE Usuarios.Sexo = (SELECT Sexo FROM Usuario_Preferencias WHERE idUsuario = "+idUsuario+")").ToList();
             return View(res);
         }
 
